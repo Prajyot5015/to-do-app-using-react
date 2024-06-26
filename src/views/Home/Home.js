@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.css'
+import AddPng from './add.png'
 
 function Home() {
   return (
@@ -11,7 +12,8 @@ function Home() {
         </div>
 
         <div>
-            <input type='text' />
+            <input type='text' className='add-input' placeholder='Add new Task'/>
+            <img src={AddPng} alt='add' className='add-icon' />
         </div>
     </div>
   )
