@@ -7,7 +7,11 @@ function Home() {
         <h1 className='app-title'>TO-DO App</h1>
 
         <div className='todo-list-container'>
+            <h2>List Will go here</h2>
+        </div>
 
+        <div>
+            <input type='text' />
         </div>
     </div>
   )
