@@ -1,0 +1,8 @@
+.app-title{
+    text-align: center;
+}
+.todo-list-container{
+    background-color: #fff;
+    height: 800px;
+    width: 400px;
+}
