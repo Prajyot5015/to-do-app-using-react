@@ -1,0 +1,7 @@
+.todo-card{
+    border: 1px solid black;
+    padding: 5px 20px;
+    margin: 10px 5px;
+    border-radius: 10px;
+    font-size: 20px;
+}

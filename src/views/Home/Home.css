@@ -8,6 +8,7 @@
     margin: 5px auto;
     border-radius: 10px;
     padding: 5px;
+    overflow: scroll;
 }
 .add-todo-item-container{
     display: flex;

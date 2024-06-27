@@ -3,7 +3,7 @@ import './TodoCard.css'
 
 function TodoCard({todoItem}) {
   return (
-    <div>
+    <div className='todo-card'>
         {todoItem}
     </div>
   )

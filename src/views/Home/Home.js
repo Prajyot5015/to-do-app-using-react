@@ -11,6 +11,12 @@ function Home() {
     "Go to gym",
     "Finish Project",
     "Go to gym",
+    "Finish Project",
+    "Go to gym",
+    "Finish Project",
+    "Go to gym",
+    "Finish Project",
+    "Go to gym",
     "Finish Project"
   ]
 
