@@ -1,14 +1,31 @@
 import React from 'react'
 import './Home.css'
 import AddPng from './add.png'
+import TodoCard from '../../components/TodoCard/TodoCard'
 
 function Home() {
+
+  const todoList = [
+    "Go to gym",
+    "Finish Project",
+    "Go to gym",
+    "Finish Project",
+    "Go to gym",
+    "Finish Project"
+  ]
+
   return (
     <div>
       <h1 className='app-title'>TO-DO App</h1>
 
       <div className='todo-list-container'>
-        <h2>List Will go here</h2>
+        {
+          todoList.map((todoItem, i)=>
+  
+                <TodoCard key={i} todoItem={todoItem} />
+              
+          )
+        }
       </div>
 
       <div className='add-todo-item-container'>
