@@ -9,6 +9,20 @@
     border-radius: 10px;
     padding: 5px;
 }
+.add-todo-item-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.add-input{
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid gray;
+    margin-right: 20px;
+}
 .add-icon{
     width: 30px;
+    cursor: pointer;
 }
