@@ -21,7 +21,7 @@ function Home() {
         }
         {
           todoList.length === 0 ?
-            <p style={{ textAlign: 'center' }}>No Tast to show please add new Task.</p>
+            <p className='message'>No Tast to show please add new Task.</p>
             :
             null
         }
