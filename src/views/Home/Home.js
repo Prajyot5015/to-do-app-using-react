@@ -1,24 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import AddPng from './add.png'
 import TodoCard from '../../components/TodoCard/TodoCard'
 
 function Home() {
 
-  const todoList = [
-    "Go to gym",
-    "Finish Project",
-    "Go to gym",
-    "Finish Project",
-    "Go to gym",
-    "Finish Project",
-    "Go to gym",
-    "Finish Project",
-    "Go to gym",
-    "Finish Project",
-    "Go to gym",
-    "Finish Project"
-  ]
+  const [todoList, setTodoList] = useState([])
+
+  const [newTask, setNewTask] = useState("")
 
   return (
     <div>
@@ -35,8 +24,21 @@ function Home() {
       </div>
 
       <div className='add-todo-item-container'>
-        <input type='text' className='add-input' placeholder='Add new Task' />
-        <img src={AddPng} alt='add' className='add-icon' />
+        <input
+          type='text' 
+          className='add-input' 
+          placeholder='Add new Task'
+          value={newTask} 
+          onChange={(e)=> setNewTask(e.target.value)}/>
+
+        <img 
+            src={AddPng} 
+            alt='add' 
+            className='add-icon'
+            onClick={()=>{
+              setTodoList([...todoList, newTask])
+              setNewTask("")
+            }} />
       </div>
     </div>
   )
