@@ -40,6 +40,11 @@ function Home() {
           alt='add'
           className='add-icon'
           onClick={() => {
+            if(newTask === ""){
+              toast.error("Task cannot be empty")
+              return
+            }
+
             setTodoList([...todoList, newTask])
             setNewTask("")
             toast.success("Task added successfully")
