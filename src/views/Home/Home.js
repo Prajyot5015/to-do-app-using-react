@@ -3,6 +3,7 @@ import './Home.css'
 import AddPng from './add.png'
 import TodoCard from '../../components/TodoCard/TodoCard'
 import toast, { Toaster } from 'react-hot-toast'
+import Swal from 'sweetalert2'
 
 function Home() {
 
@@ -25,6 +26,28 @@ function Home() {
     localStorage.setItem("todoList", JSON.stringify(todoList))
   }, [todoList])
 
+  function deleteItem(index) {
+    Swal.fire({
+      title: "Are you sure ?",
+      text: "You want to delete this task!",
+      icon: "warning",
+      showCancelButton: true,
+    }).then((result) => {
+      if (!result.isConfirmed) {
+        return
+      }
+      const newToDoList = todoList.filter((item, i) => {
+        if (i !== index) {
+          return true
+        }
+        else {
+          return false
+        }
+      })
+      setTodoList(newToDoList)
+    })
+  }
+
   return (
     <div>
       <h1 className='app-title'>TO-DO App</h1>
@@ -33,7 +56,8 @@ function Home() {
         {
           todoList.map((todoItem, i) => {
             const { task, category } = todoItem
-            return <TodoCard key={i} task={task} category={category} />
+            return <TodoCard key={i} index={i} task={task} category={category} 
+            deleteItem={deleteItem} />
           })
         }
         {
