@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Home.css'
 import AddPng from './add.png'
 import TodoCard from '../../components/TodoCard/TodoCard'
+import toast, { Toaster } from 'react-hot-toast'
 
 function Home() {
 
@@ -41,8 +42,10 @@ function Home() {
           onClick={() => {
             setTodoList([...todoList, newTask])
             setNewTask("")
+            toast.success("Task added successfully")
           }} />
       </div>
+      <Toaster />
     </div>
   )
 }
