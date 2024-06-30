@@ -35,6 +35,16 @@ function Home() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)} />
 
+        <select className='category-select'>
+          <option>Category</option>
+          <option>Learning</option>
+          <option>Work</option>
+          <option>Personal</option>
+          <option>Shopping</option>
+          <option>Health</option>
+          <option>Others</option>
+        </select>
+
         <img
           src={AddPng}
           alt='add'

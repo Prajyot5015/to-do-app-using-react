@@ -37,7 +37,12 @@
     border: 1px solid gray;
     margin-right: 20px;
 }
-
+.category-select{
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+}
 .add-icon {
     width: 40px;
     cursor: pointer;
