@@ -12,16 +12,6 @@ function Home() {
 
   const [category, setCategory] = useState("")
 
-  const CATEGORU_EMOGI_MAP = {
-        sports: "🏓",
-        learning: "📚",
-        work: "💻",
-        personal: "🔐",
-        shopping: "🛍️",
-        health: "🏥",
-        other: "📁"
-  }
-
   return (
     <div>
       <h1 className='app-title'>TO-DO App</h1>
