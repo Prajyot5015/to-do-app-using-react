@@ -1,10 +1,11 @@
 import React from 'react'
 import './TodoCard.css'
 
-function TodoCard({todoItem}) {
+function TodoCard({task,category}) {
   return (
     <div className='todo-card'>
-        {todoItem}
+        {task} 
+        <span className='category'> {category} </span>
     </div>
   )
 }

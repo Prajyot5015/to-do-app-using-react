@@ -1,7 +1,19 @@
 .todo-card{
     border: 1px solid black;
-    padding: 5px 20px;
+    padding: 10px 20px;
     margin: 10px 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 20px;
+    background-color: #D9AFD9;
+    position: relative;
+}
+.category{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #fff;
+    font-size: 15px;
+    padding: 1px 5px;
+    width: 60px;
+    text-align: center;
 }

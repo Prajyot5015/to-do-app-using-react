@@ -12,14 +12,26 @@ function Home() {
 
   const [category, setCategory] = useState("")
 
+  const CATEGORU_EMOGI_MAP = {
+        sports: "🏓",
+        learning: "📚",
+        work: "💻",
+        personal: "🔐",
+        shopping: "🛍️",
+        health: "🏥",
+        other: "📁"
+  }
+
   return (
     <div>
       <h1 className='app-title'>TO-DO App</h1>
 
       <div className='todo-list-container'>
         {
-          todoList.map((todoItem, i) =>
-            <TodoCard key={i} todoItem={todoItem} />)
+          todoList.map((todoItem, i) =>{
+            const {task, category} = todoItem
+            return <TodoCard key={i} task={task} category={category} />
+          })
         }
         {
           todoList.length === 0 ?
@@ -43,6 +55,7 @@ function Home() {
             onChange={(e)=> setCategory(e.target.value)}>
           <option value="">Category</option>
           <option value="learning">Learning</option>
+          <option value="sport">Sport</option>
           <option value="work">Work</option>
           <option value="personal">Personal</option>
           <option value="shopping">Shopping</option>
@@ -59,9 +72,18 @@ function Home() {
               toast.error("Task cannot be empty")
               return
             }
+            if(category === ""){
+              toast.error("Category cannot be empty")
+              return
+            }
 
-            setTodoList([...todoList, newTask])
+
+            setTodoList([...todoList, {
+              task : newTask,
+              category : category
+            }])
             setNewTask("")
+            setCategory("")
             toast.success("Task added successfully")
           }} />
       </div>
