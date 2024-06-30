@@ -66,8 +66,13 @@
     }
     .select-add-container{
         margin-top: 15px;
+        width: 95%;
     }
     .category-select{
         width: 220px;
+        margin-right: 30px;
+    }
+    .add-input{
+        width: 95%;
     }
 }
