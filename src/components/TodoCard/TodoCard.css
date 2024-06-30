@@ -9,11 +9,11 @@
 }
 .category{
     position: absolute;
-    top: 5px;
+    top: 7px;
     right: 5px;
-    background-color: #fff;
     font-size: 15px;
-    padding: 1px 5px;
+    padding: 4px 5px;
     width: 90px;
     text-align: center;
+    border-radius: 20px;
 }

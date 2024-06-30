@@ -4,23 +4,23 @@ import './TodoCard.css'
 function TodoCard({task,category}) {
 
   const CATEGORU_EMOGI_MAP = {
-    sport: "🏓",
-    learning: "📚",
-    work: "💻",
-    personal: "🔐",
-    shopping: "🛍️",
-    health: "🏥",
-    others: "📁"
+    Sport: "🏓",
+    Learning: "📚",
+    Work: "💻",
+    Personal: "🔐",
+    Shopping: "🛍️",
+    Health: "🏥",
+    Others: "📁"
 }
 
 const category_Color = {
-  sport: "#bfff80",
-  learning: "#4d4dff",
-  work: "#86b300",
-  personal: "#0099ff",
-  shopping: "#ff1ab3",
-  health: "#00cc00",
-  others: "#ffad33"
+  Sport: "#bfff80",
+  Learning: "#4d4dff",
+  Work: "#86b300",
+  Personal: "#0099ff",
+  Shopping: "#ff1ab3",
+  Health: "#00cc00",
+  Others: "#ffad33"
 }
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Home.css'
 import AddPng from './add.png'
 import TodoCard from '../../components/TodoCard/TodoCard'
@@ -12,14 +12,27 @@ function Home() {
 
   const [category, setCategory] = useState("")
 
+  useEffect(() => {
+    const savedTOdoList = localStorage.getItem("todoList")
+    if (savedTOdoList) {
+      setTodoList(JSON.parse(savedTOdoList))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (todoList.length === 0) return
+
+    localStorage.setItem("todoList", JSON.stringify(todoList))
+  }, [todoList])
+
   return (
     <div>
       <h1 className='app-title'>TO-DO App</h1>
 
       <div className='todo-list-container'>
         {
-          todoList.map((todoItem, i) =>{
-            const {task, category} = todoItem
+          todoList.map((todoItem, i) => {
+            const { task, category } = todoItem
             return <TodoCard key={i} task={task} category={category} />
           })
         }
@@ -39,18 +52,18 @@ function Home() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)} />
 
-        <select 
-            className='category-select' 
-            value={category}
-            onChange={(e)=> setCategory(e.target.value)}>
+        <select
+          className='category-select'
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}>
           <option value="">Category</option>
-          <option value="learning">Learning</option>
-          <option value="sport">Sport</option>
-          <option value="work">Work</option>
-          <option value="personal">Personal</option>
-          <option value="shopping">Shopping</option>
-          <option value="health">Health</option>
-          <option value="others">Others</option>
+          <option value="Learning">Learning</option>
+          <option value="Sport">Sport</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Health">Health</option>
+          <option value="Others">Others</option>
         </select>
 
         <img
@@ -58,19 +71,19 @@ function Home() {
           alt='add'
           className='add-icon'
           onClick={() => {
-            if(newTask === ""){
+            if (newTask === "") {
               toast.error("Task cannot be empty")
               return
             }
-            if(category === ""){
+            if (category === "") {
               toast.error("Category cannot be empty")
               return
             }
 
 
             setTodoList([...todoList, {
-              task : newTask,
-              category : category
+              task: newTask,
+              category: category
             }])
             setNewTask("")
             setCategory("")
