@@ -15,30 +15,33 @@ function Home() {
 
       <div className='todo-list-container'>
         {
-          todoList.map((todoItem, i)=>
-  
-                <TodoCard key={i} todoItem={todoItem} />
-              
-          )
+          todoList.map((todoItem, i) =>
+            <TodoCard key={i} todoItem={todoItem} />)
+        }
+        {
+          todoList.length === 0 ?
+            <p style={{ textAlign: 'center' }}>No Tast to show please add new Task.</p>
+            :
+            null
         }
       </div>
 
       <div className='add-todo-item-container'>
         <input
-          type='text' 
-          className='add-input' 
+          type='text'
+          className='add-input'
           placeholder='Add new Task'
-          value={newTask} 
-          onChange={(e)=> setNewTask(e.target.value)}/>
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)} />
 
-        <img 
-            src={AddPng} 
-            alt='add' 
-            className='add-icon'
-            onClick={()=>{
-              setTodoList([...todoList, newTask])
-              setNewTask("")
-            }} />
+        <img
+          src={AddPng}
+          alt='add'
+          className='add-icon'
+          onClick={() => {
+            setTodoList([...todoList, newTask])
+            setNewTask("")
+          }} />
       </div>
     </div>
   )
