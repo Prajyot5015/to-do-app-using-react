@@ -56,8 +56,8 @@ function Home() {
         {
           todoList.map((todoItem, i) => {
             const { task, category } = todoItem
-            return <TodoCard key={i} index={i} task={task} category={category} 
-            deleteItem={deleteItem} />
+            return <TodoCard key={i} index={i} task={task} category={category}
+              deleteItem={deleteItem} />
           })
         }
         {
@@ -76,43 +76,45 @@ function Home() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)} />
 
-        <select
-          className='category-select'
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}>
-          <option value="">Category</option>
-          <option value="Learning">Learning</option>
-          <option value="Sport">Sport</option>
-          <option value="Work">Work</option>
-          <option value="Personal">Personal</option>
-          <option value="Shopping">Shopping</option>
-          <option value="Health">Health</option>
-          <option value="Others">Others</option>
-        </select>
+        <div className='select-add-container'> 
+          <select
+            className='category-select'
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}>
+            <option value="">Category</option>
+            <option value="Learning">Learning</option>
+            <option value="Sport">Sport</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Health">Health</option>
+            <option value="Others">Others</option>
+          </select>
 
-        <img
-          src={AddPng}
-          alt='add'
-          className='add-icon'
-          onClick={() => {
-            if (newTask === "") {
-              toast.error("Task cannot be empty")
-              return
-            }
-            if (category === "") {
-              toast.error("Category cannot be empty")
-              return
-            }
+          <img
+            src={AddPng}
+            alt='add'
+            className='add-icon'
+            onClick={() => {
+              if (newTask === "") {
+                toast.error("Task cannot be empty")
+                return
+              }
+              if (category === "") {
+                toast.error("Category cannot be empty")
+                return
+              }
 
 
-            setTodoList([...todoList, {
-              task: newTask,
-              category: category
-            }])
-            setNewTask("")
-            setCategory("")
-            toast.success("Task added successfully")
-          }} />
+              setTodoList([...todoList, {
+                task: newTask,
+                category: category
+              }])
+              setNewTask("")
+              setCategory("")
+              toast.success("Task added successfully")
+            }} />
+        </div>
       </div>
       <Toaster />
     </div>

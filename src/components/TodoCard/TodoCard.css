@@ -11,11 +11,11 @@
 }
 .category{
     position: absolute;
-    top: 7px;
+    top: 8px;
     right: 50px;
     font-size: 12px;
-    padding: 4px 4px;
-    width: 90px;
+    padding: 4px 2px;
+    width: 80px;
     text-align: center;
     border-radius: 20px;
 }

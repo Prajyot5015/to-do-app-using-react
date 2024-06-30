@@ -37,6 +37,10 @@
     border: 1px solid #ccc;
     margin-right: 7px;
 }
+.select-add-container{
+    display: flex;
+    align-items: center;
+}
 .category-select{
     padding: 5px 10px;
     border-radius: 10px;
@@ -52,4 +56,18 @@
 .add-icon:hover {
     transform: rotate(90deg);
     transition: 1s;
+}
+@media screen and (max-width: 470px) {
+    .todo-list-container{
+        width: 95%;
+    }
+    .add-todo-item-container{
+        flex-direction: column;
+    }
+    .select-add-container{
+        margin-top: 15px;
+    }
+    .category-select{
+        width: 220px;
+    }
 }
