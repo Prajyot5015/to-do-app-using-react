@@ -13,7 +13,7 @@
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .message {
@@ -36,6 +36,7 @@
     font-size: 20px;
     border: 1px solid #ccc;
     margin-right: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .select-add-container{
     display: flex;
@@ -47,6 +48,7 @@
     font-size: 20px;
     border: 1px solid #ccc;
     margin-right: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .add-icon {
     width: 40px;
@@ -76,5 +78,8 @@
     .add-input{
         width: 95%;
         height: 50px;
+    }
+    .add-icon{
+        width: 50px;
     }
 }
